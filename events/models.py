@@ -8,6 +8,10 @@ class Venue(models.Model):
 	space = models.IntegerField(default=0)
 
 class Event(models.Model):
+	name = models.CharField(max_length=30)
+	venue = Venue()
+	date = models.DateTimeField('date')
+	classification = models.CharField(max_length=30)
 
 class UserCreate(models.Model):
 	f_name =  models.CharField(max_length=30)
@@ -19,5 +23,3 @@ class UserBuy(models.Model):
 	f_name =  models.CharField(max_length=30)
 	email = models.CharField(max_length=30)
 	passwd = models.CharField(max_length=30)
-
-class 
